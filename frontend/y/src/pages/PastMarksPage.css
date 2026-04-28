@@ -1,0 +1,164 @@
+.past-marks-container {
+  padding: 100px 20px 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.past-marks-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.past-marks-title {
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.empty-state p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.empty-state .btn {
+  margin-top: 20px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.past-marks-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.past-marks-table thead {
+  background: #f8f9fa;
+}
+
+.past-marks-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.past-marks-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+
+.past-marks-table tbody tr:hover {
+  background: #f8f9fa;
+  transition: background 0.3s ease;
+}
+
+.performance-badge {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.action-buttons .btn {
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 12px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-buttons .btn-secondary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+}
+
+.action-buttons .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  color: white;
+}
+
+.action-buttons .btn-outline-secondary {
+  color: #667eea;
+  border: 2px solid #667eea;
+  background: white;
+}
+
+.action-buttons .btn-outline-secondary:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .past-marks-container {
+    padding: 80px 10px 20px 10px;
+  }
+
+  .past-marks-card {
+    padding: 20px;
+  }
+
+  .past-marks-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .past-marks-table th,
+  .past-marks-table td {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+}

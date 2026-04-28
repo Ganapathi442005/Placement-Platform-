@@ -1,0 +1,247 @@
+.test-home-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.test-home-header {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  color: white;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.test-home-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.user-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-logout {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.test-home-content {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.subtitle {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.assessment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.assessment-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.assessment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.assessment-card h3 {
+  color: #333;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.assessment-card p {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 25px 0;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.assessment-card .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.assessment-card .btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.assessment-card .btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.assessment-card .btn-warning {
+  background: #ffc107;
+  color: #333;
+}
+
+.assessment-card .btn-warning:hover {
+  background: #ffb300;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+}
+
+.assessment-card .btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.assessment-card .btn-danger:hover {
+  background: #c82333;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+}
+
+.assessment-card .btn-info {
+  background: #17a2b8;
+  color: white;
+}
+
+.assessment-card .btn-info:hover {
+  background: #138496;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(23, 162, 184, 0.4);
+}
+
+.past-marks-card {
+  border: 3px solid #17a2b8;
+}
+
+.past-marks-card h3 {
+  color: #17a2b8;
+}
+
+@media (max-width: 768px) {
+  .test-home-container {
+    padding-top: 50px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .test-home-header h1 {
+    font-size: 24px;
+  }
+
+  .user-section {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-logout {
+    width: 100%;
+  }
+
+  .test-home-content {
+    padding: 20px 10px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .assessment-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .assessment-card {
+    padding: 20px;
+  }
+
+  .card-icon {
+    font-size: 36px;
+  }
+
+  .assessment-card h3 {
+    font-size: 16px;
+  }
+
+  .assessment-card p {
+    font-size: 13px;
+  }
+}
