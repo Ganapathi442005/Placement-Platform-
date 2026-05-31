@@ -29,13 +29,13 @@ function AdminDashboard() {
   const fetchData = async () => {
     try {
       // Fetch users
-      const usersResponse = await axios.get("http://localhost:8080/api/auth/users");
+      const usersResponse = await axios.get("https://placement-platform-production-4dbe.up.railway.app/api/auth/users");
       if (Array.isArray(usersResponse.data)) {
         setUsers(usersResponse.data);
       }
 
       // Fetch assessment results
-      const resultsResponse = await axios.get("http://localhost:8080/api/assessment/all-results");
+      const resultsResponse = await axios.get("https://placement-platform-production-4dbe.up.railway.app/api/assessment/all-results");
       if (resultsResponse.data.success) {
         setAssessmentResults(resultsResponse.data.data);
       }
