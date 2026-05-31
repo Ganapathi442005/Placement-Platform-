@@ -40,7 +40,7 @@ function Signup() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/auth/signup", {
+      const response = await axios.post("http://https://placement-platform-production-4dbe.up.railway.app/api/auth/signup", {
         email,
         username,
         password,

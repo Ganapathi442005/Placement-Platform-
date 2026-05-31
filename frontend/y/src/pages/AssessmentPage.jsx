@@ -63,7 +63,7 @@ function AssessmentPage() {
         console.error("Failed to parse cached questions", e);
         // Fall back to fetching
         axios
-          .get(`http://localhost:8080/api/questions/level${level}/${domain}/random`)
+          .get(`http://https://placement-platform-production-4dbe.up.railway.app/api/questions/level${level}/${domain}/random`)
           .then((res) => {
             setQuestions(res.data);
             localStorage.setItem(cacheKey, JSON.stringify(res.data));
@@ -83,7 +83,7 @@ function AssessmentPage() {
     } else {
       // Fetch and cache new questions
       axios
-        .get(`http://localhost:8080/api/questions/level${level}/${domain}/random`)
+        .get(`http://https://placement-platform-production-4dbe.up.railway.app/api/questions/level${level}/${domain}/random`)
         .then((res) => {
           setQuestions(res.data);
           localStorage.setItem(cacheKey, JSON.stringify(res.data));
@@ -179,7 +179,7 @@ function AssessmentPage() {
                 let anyErrors = false;
 
                 for (const test of visibleTests) {
-                  const res = await axios.post("http://localhost:8080/api/code/run", {
+                  const res = await axios.post("http://https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
                     code,
                     language,
                     input: test.input,
@@ -191,7 +191,7 @@ function AssessmentPage() {
 
                 let hiddenPassed = 0;
                 for (const test of hiddenTests) {
-                  const res = await axios.post("http://localhost:8080/api/code/run", {
+                  const res = await axios.post("http://https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
                     code,
                     language,
                     input: test.input,
@@ -249,7 +249,7 @@ function AssessmentPage() {
         keywordsJson: q.keywordsJson || "",
       }));
 
-      const response = await axios.post("http://localhost:8080/api/assessment/submit", {
+      const response = await axios.post("http://https://placement-platform-production-4dbe.up.railway.app/api/assessment/submit", {
         username: user.username,
         level: parseInt(level),
         domain: domain.toUpperCase(),
