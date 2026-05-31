@@ -53,7 +53,7 @@ if __name__ == "__main__":
   // Load question and restore code from localStorage
   useEffect(() => {
     axios
-      .get(`http://https://placement-platform-production-4dbe.up.railway.app/api/questions/coding/${id}`)
+      .get(`https://placement-platform-production-4dbe.up.railway.app/api/questions/coding/${id}`)
       .then((res) => {
         setQuestion(res.data.question);
         setVisibleTests(res.data.visibleTestCases);
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     let temp = [];
 
     for (let test of visibleTests) {
-      const res = await axios.post("http://https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+      const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
         code,
         language,
         input: test.input,
@@ -157,7 +157,7 @@ if __name__ == "__main__":
     let anyErrors = false;
 
     for (let test of visibleTests) {
-      const res = await axios.post("http://https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+      const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
         code,
         language,
         input: test.input,
@@ -183,7 +183,7 @@ if __name__ == "__main__":
     let hiddenTemp = [];
     for (let idx = 0; idx < hiddenTests.length; idx++) {
       const test = hiddenTests[idx];
-      const res = await axios.post("http://https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+      const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
         code,
         language,
         input: test.input,

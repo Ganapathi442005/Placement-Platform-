@@ -23,7 +23,7 @@ function PastMarksPage() {
   const fetchPastMarks = async () => {
     try {
       const response = await axios.get(
-        `http://https://placement-platform-production-4dbe.up.railway.app/api/assessment/past-marks/${user.username}`
+        `https://placement-platform-production-4dbe.up.railway.app/api/assessment/past-marks/${user.username}`
       );
 
       if (response.data.success) {
