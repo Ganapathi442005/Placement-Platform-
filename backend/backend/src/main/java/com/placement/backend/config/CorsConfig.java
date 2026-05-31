@@ -13,26 +13,23 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        
-        // Allow credentials
+
         config.setAllowCredentials(true);
-        
-        // Allow from localhost on any port
+
+        // Local frontend
         config.addAllowedOriginPattern("http://localhost:*");
         config.addAllowedOriginPattern("http://127.0.0.1:*");
-        
-        // Allow all headers
+
+        // Vercel frontend
+        config.addAllowedOriginPattern("https://placement-platform-livid.vercel.app");
+
         config.addAllowedHeader("*");
-        
-        // Allow all methods
         config.addAllowedMethod("*");
-        
-        // Set max age
+
         config.setMaxAge(3600L);
-        
-        // Register for all paths
+
         source.registerCorsConfiguration("/**", config);
-        
+
         return new CorsFilter(source);
     }
 }
