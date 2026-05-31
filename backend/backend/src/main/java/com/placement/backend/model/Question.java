@@ -1,10 +1,22 @@
 package com.placement.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
-import lombok.*;
-
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "questions")
@@ -24,9 +36,7 @@ public class Question {
     private String difficulty;
     private String type;
 
-    // ======================
-    // MCQ FIELDS
-    // ======================
+   
 
     @Column(columnDefinition = "TEXT")
     private String question;
@@ -46,9 +56,7 @@ public class Question {
     @Column(name = "correct_answer", columnDefinition = "TEXT")
     private String correctAnswer;
 
-    // ======================
-    // CODING FIELDS
-    // ======================
+    
 
     private String title;
 
@@ -58,10 +66,7 @@ public class Question {
     @Column(columnDefinition = "TEXT")
     private String constraints;
 
-    // ======================
-    // KEYWORD-BASED SCORING FIELDS (for Level 1/2/3 CORE and Level 3 IT)
-    // ======================
-
+   
     @Column(columnDefinition = "LONGTEXT")
     private String keywordsJson;
 
@@ -71,9 +76,7 @@ public class Question {
     @Column(name = "question_type")
     private String questionType;
 
-    // ======================
-    // RELATIONSHIPS
-    // ======================
+   
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<VisibleTestCase> visibleTestCases;

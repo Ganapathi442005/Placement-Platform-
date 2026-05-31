@@ -18,12 +18,11 @@ function AssessmentPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const answersKey = `assessmentAnswers_${level}_${domain}_${user.username}`;
+  const answersKey = user ? `assessmentAnswers_${level}_${domain}_${user.username}` : null;
 
   // Function to fetch questions
   const fetchQuestions = (forceReload = false) => {
     if (!user || !user.username) {
-      navigate("/login");
       return;
     }
 
@@ -118,6 +117,9 @@ function AssessmentPage() {
 
   // Fetch Questions on mount
   useEffect(() => {
+    if (!user || !user.username) {
+      return;
+    }
     fetchQuestions();
   }, [level, domain, user, navigate]);
 
@@ -292,6 +294,33 @@ function AssessmentPage() {
   };
 
   let currentCategory = "";
+
+  if (!user || !user.username) {
+    return (
+      <div className="container mt-5">
+        <div className="card shadow-lg border-0 p-4 text-center">
+          <h3 className="fw-bold text-primary">Login Required</h3>
+          <p className="lead">
+            You must be logged in before you can start the assessment.
+          </p>
+          <div className="d-flex justify-content-center gap-3 mt-4">
+            <button
+              className="btn btn-primary btn-lg"
+              onClick={() => navigate("/login")}
+            >
+              Go to Login
+            </button>
+            <button
+              className="btn btn-outline-secondary btn-lg"
+              onClick={() => navigate(`/test/${level}`)}
+            >
+              Back to Test Selection
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mt-5">

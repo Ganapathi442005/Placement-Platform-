@@ -1,11 +1,14 @@
 package com.placement.backend.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class AssessmentScoreCalculationServiceTest {
 
@@ -29,7 +32,7 @@ public class AssessmentScoreCalculationServiceTest {
         String correct = "inheritance polymorphism abstraction";
         String answer = "Inheritance and polymorphism are important";
         int marks = service.calculateCoreMarks(answer, correct);
-        // two of three keywords -> roughly 7-8 marks
+        
         assertTrue(marks >= 6 && marks <= 8);
     }
 

@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 function TestInfo() {
   const { level, domain } = useParams();
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   return (
     <div className="container mt-5">
@@ -13,6 +16,12 @@ function TestInfo() {
         </h2>
 
         <hr />
+
+        {!user && (
+          <div className="alert alert-warning text-center">
+            You are not logged in. You can still proceed, but you will need to login on the next page before taking the assessment.
+          </div>
+        )}
 
         <div className="row mt-3">
           <div className="col-md-6">
