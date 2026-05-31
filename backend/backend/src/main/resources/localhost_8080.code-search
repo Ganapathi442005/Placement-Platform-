@@ -1,0 +1,66 @@
+# Query: localhost:8080
+# ContextLines: 1
+
+14 results - 6 files
+
+frontend\y\src\pages\AdminDashboard.jsx:
+  31        // Fetch users
+  32:       const usersResponse = await axios.get("https://placement-platform-production-4dbe.up.railway.app/api/auth/users");
+  33        if (Array.isArray(usersResponse.data)) {
+
+  37        // Fetch assessment results
+  38:       const resultsResponse = await axios.get("https://placement-platform-production-4dbe.up.railway.app/api/assessment/all-results");
+  39        if (resultsResponse.data.success) {
+
+frontend\y\src\pages\AssessmentPage.jsx:
+   65          axios
+   66:           .get(`https://placement-platform-production-4dbe.up.railway.app/api/questions/level${level}/${domain}/random`)
+   67            .then((res) => {
+
+   85        axios
+   86:         .get(`https://placement-platform-production-4dbe.up.railway.app/api/questions/level${level}/${domain}/random`)
+   87          .then((res) => {
+
+  181                  for (const test of visibleTests) {
+  182:                   const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+  183                      code,
+
+  193                  for (const test of hiddenTests) {
+  194:                   const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+  195                      code,
+
+  251  
+  252:       const response = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/assessment/submit", {
+  253          username: user.username,
+
+frontend\y\src\pages\CodingPage.jsx:
+   55      axios
+   56:       .get(`https://placement-platform-production-4dbe.up.railway.app/api/questions/coding/${id}`)
+   57        .then((res) => {
+
+  129      for (let test of visibleTests) {
+  130:       const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+  131          code,
+
+  159      for (let test of visibleTests) {
+  160:       const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+  161          code,
+
+  185        const test = hiddenTests[idx];
+  186:       const res = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/code/run", {
+  187          code,
+
+frontend\y\src\pages\Login.jsx:
+  21      try {
+  22:       const response = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/auth/login", {
+  23          email,
+
+frontend\y\src\pages\PastMarksPage.jsx:
+  25        const response = await axios.get(
+  26:         `https://placement-platform-production-4dbe.up.railway.app/api/assessment/past-marks/${user.username}`
+  27        );
+
+frontend\y\src\pages\Signup.jsx:
+  42      try {
+  43:       const response = await axios.post("https://placement-platform-production-4dbe.up.railway.app/api/auth/signup", {
+  44          email,
